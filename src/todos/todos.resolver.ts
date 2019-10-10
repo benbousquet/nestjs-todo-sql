@@ -21,4 +21,9 @@ export class TodosResolver {
   async createTodo(@Args('data') data: inputTodo) {
     return this.todosService.createOne(data);
   }
+
+  @Mutation(() => TodoDto)
+  async completeTodo(@Args('id') id: string) {
+    return this.todosService.completeTask(id);
+  }
 }

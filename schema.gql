@@ -10,6 +10,7 @@ input inputTodo {
 
 type Mutation {
   createTodo(data: inputTodo!): TodoDto!
+  completeTodo(id: String!): TodoDto!
 }
 
 type Query {

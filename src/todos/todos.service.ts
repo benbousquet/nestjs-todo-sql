@@ -27,4 +27,9 @@ export class TodosService {
     const createdTodo = plainToClass(TodoDto, createdTodoEntity);
     return createdTodo;
   }
+
+  async completeTask(id: string): Promise<Todos> {
+    await this.todosRepository.update({ id }, { done: true });
+    return this.findOne(id);
+  }
 }

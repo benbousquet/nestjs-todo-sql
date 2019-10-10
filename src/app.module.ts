@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TodosModule } from './todos/todos.module';
+import { UsersModule } from './users/users.module';
 const fs = require('fs');
 require('dotenv').config();
 
@@ -22,6 +23,7 @@ require('dotenv').config();
       },
       synchronize: true,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
